@@ -2,6 +2,7 @@ const express = require('express')
 
 const app = express()
 const http = require('http').Server(app)
+const mime = require('mime')
 
 
 app.get('/', (request, response, next) => {
@@ -9,9 +10,9 @@ app.get('/', (request, response, next) => {
 })
 
 app.get('/apple-app-site-association', (request, response, next) => {
+    response.setHeader("Content-Type", 'application/json')
     // response.sendFile(path.join(__dirname, './association', 'apple-app-site-association'));
     // response.status(200).sendFile('/.well-known/apple-app-site-association', {root: __dirname});
-
     response.status(200).json({
         applinks: {
           apps: [ ],
