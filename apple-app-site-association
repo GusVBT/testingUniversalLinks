@@ -1,0 +1,13 @@
+{
+  applinks: {
+    apps: [ ],
+    details: [
+      {
+        appID: "H2MGR4798V.GusVBT.testingUniversalLinks",
+        paths: [
+          "*"
+        ]
+      }
+    ]
+  }
+}
