@@ -8,10 +8,11 @@ app.get('/', (request, response, next) => {
 })
 
 app.get('/redirect', (request, response, next) => {
-
+    console.log('entrou aqui')
     var userAgent = request.headers['user-agent']
-    var isIOs = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-
+    console.log(userAgent)
+    var isIOs = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream
+    console.log(isIOs)
     if (isIOs) {
         response.redirect('https://itunes.apple.com/us/app/youtube-watch-listen-stream/id544007664?mt=8')
         return
