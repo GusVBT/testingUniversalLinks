@@ -12,5 +12,7 @@ app.use((err, request, response, next) => {
     response.status(400).json(err)
 })
 
-http.listen(2000)
-console.log('listen in port =', 2000)
+var port = process.env.PORT || 2000
+
+http.listen(port)
+console.log('listen in port =', port)
