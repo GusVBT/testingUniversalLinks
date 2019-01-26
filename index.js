@@ -8,6 +8,11 @@ app.get('/', (request, response, next) => {
     response.status(200).json('Universal Link server')
 })
 
+app.get('/apple-app-site-association', (request, response, next) => {
+    // response.sendFile(path.join(__dirname, './association', 'apple-app-site-association'));
+    response.sendFile('/association/apple-app-site-association', {root: __dirname});
+})
+
 app.use((err, request, response, next) => {
     response.status(400).json(err)
 })
