@@ -10,22 +10,22 @@ app.get('/', (request, response, next) => {
 })
 
 app.get('/apple-app-site-association', (request, response, next) => {
-    response.setHeader("Content-Type", 'application/json')
+    response.setHeader('Content-Type', 'application/json')
     // response.sendFile(path.join(__dirname, './association', 'apple-app-site-association'));
-    // response.status(200).sendFile('/.well-known/apple-app-site-association', {root: __dirname});
-    response.status(200).json({
-        applinks: {
-          apps: [ ],
-          details: [
-            {
-              appID: "H2MGR4798V.GusVBT.testingUniversalLinks",
-              paths: [
-                "*"
-              ]
-            }
-          ]
-        }
-      })
+    response.status(200).sendFile('/.well-known/apple-app-site-association', {root: __dirname})
+    // response.status(200).json({
+    //     applinks: {
+    //       apps: [ ],
+    //       details: [
+    //         {
+    //           appID: "H2MGR4798V.GusVBT.testingUniversalLinks",
+    //           paths: [
+    //             "*"
+    //           ]
+    //         }
+    //       ]
+    //     }
+    //   })
 })
 
 app.use((err, request, response, next) => {

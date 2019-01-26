@@ -1,10 +1,10 @@
 {
-  applinks: {
-    apps: [ ],
-    details: [
+  "applinks": {
+    "apps": [ ],
+    "details": [
       {
-        appID: "H2MGR4798V.GusVBT.testingUniversalLinks",
-        paths: [
+        "appID": "H2MGR4798V.GusVBT.testingUniversalLinks",
+        "paths": [
           "*"
         ]
       }
