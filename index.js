@@ -8,11 +8,11 @@ app.get('/', (request, response, next) => {
 })
 
 app.get('/redirect', (request, response, next) => {
-    console.log('entrou aqui')
+    
     var userAgent = request.headers['user-agent']
-    console.log(userAgent)
-    var isIOs = /iPad|iPhone|iPod/.test(userAgent) //&& !window.MSStream
-    console.log(isIOs)
+    
+    var isIOs = /iPad|iPhone|iPod/.test(userAgent) //&& !window.MSStream --take a look on that later.
+    
     if (isIOs) {
         response.redirect('https://itunes.apple.com/us/app/youtube-watch-listen-stream/id544007664?mt=8')
         return
@@ -20,6 +20,10 @@ app.get('/redirect', (request, response, next) => {
         response.redirect('https://play.google.com/store/apps/details?id=com.google.android.youtube&hl=en')
         return
     }
+})
+
+app.get('/gus', (request, response, next) => {
+    response.status(200).json('eae')
 })
 
 app.get('/apple-app-site-association', (request, response, next) => {
